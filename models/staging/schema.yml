@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: staging
+    schema: hotel_bookings_data
+    database: realtime-423621
+
+    tables:
+      - name: external_hotelbookings_data
+        
+      - name: hotel_bookings_data_partitioned
+      
