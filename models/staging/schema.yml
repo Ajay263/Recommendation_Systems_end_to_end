@@ -1,21 +1,12 @@
-
 version: 2
 
-models:
-    - name: my_first_dbt_model
-      description: "A starter dbt model"
-      columns:
-          - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null
+sources:
+  - name: staging
+    schema: hotel_bookings_data
+    database: realtime-423621
 
-    - name: my_second_dbt_model
-      description: "A starter dbt model"
-      columns:
-          - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null
+    tables:
+      - name: external_hotelbookings_data
+        
+      - name: hotel_bookings_data_partitioned
+      
