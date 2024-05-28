@@ -9,4 +9,49 @@ sources:
       - name: external_hotelbookings_data
         
       - name: hotel_bookings_data_partitioned
+
+  
+models:
+  - name: stg_external_hotelbookings_data
+    description: ""
+    columns:
+      - name: booking_id
+        data_type: string
+        description: "booking id"
+
+      - name: user_id
+        data_type: string
+        description: "User ID"
+
+      - name: checkin
+        data_type: timestamp
+        description: "Reservation check-in date"
+
+      - name: checkout
+        data_type: timestamp
+        description: "Reservation check-out date- created_date - Date when the reservation was made"
+
+      - name: city_id
+        data_type: string
+        description: "city_id of the hotel's city (anonymized)"
+
+      - name: device_class
+        data_type: string
+        description: "Device used to make the reservations eg desktop/mobile"
+
+      - name: affiliate_id
+        data_type: string
+        description: "An anonymized ID of affiliate channels where the booker came from (e.g. direct, some third party referrals, paid search engine, etc.)"
+
+      - name: booker_country
+        data_type: string
+        description: "Country from which the reservation was made (anonymized)"
+
+      - name: hotel_country
+        data_type: string
+        description: "Country of the hotel (anonymized)"
+
+      - name: utrip_id
+        data_type: string
+        description: "Unique identification of user's trip (a group of multi-destinations bookings within the same trip)."
       
