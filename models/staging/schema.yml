@@ -18,10 +18,20 @@ models:
       - name: booking_id
         data_type: string
         description: "booking id"
+        tests:
+          - unique:
+             severity: warn
+          - not_null:
+             severity: warn
 
       - name: user_id
         data_type: string
         description: "User ID"
+        tests:
+          - unique:
+              severity: warn
+          - not_null:
+              severity: warn
 
       - name: checkin
         data_type: timestamp
@@ -34,14 +44,27 @@ models:
       - name: city_id
         data_type: string
         description: "city_id of the hotel's city (anonymized)"
+        tests:
+          - unique:
+              severity: warn
+          - not_null:
+              severity: warn
 
       - name: device_class
         data_type: string
         description: "Device used to make the reservations eg desktop/mobile"
+        tests: 
+          - accepted_values:
+                values: ['desktop','mobile','tablet']
 
       - name: affiliate_id
         data_type: string
         description: "An anonymized ID of affiliate channels where the booker came from (e.g. direct, some third party referrals, paid search engine, etc.)"
+        tests:
+          - unique:
+              severity: warn
+          - not_null:
+              severity: warn
 
       - name: booker_country
         data_type: string
@@ -54,6 +77,11 @@ models:
       - name: utrip_id
         data_type: string
         description: "Unique identification of user's trip (a group of multi-destinations bookings within the same trip)."
+        tests:
+          - unique:
+              severity: warn
+          - not_null:
+              severity: warn
 
   - name: stg_hotel_bookings_data_partitioned
     description: ""
@@ -65,6 +93,11 @@ models:
       - name: user_id
         data_type: string
         description: "User ID"
+        tests:
+          - unique:
+              severity: warn
+          - not_null:
+              severity: warn
 
       - name: checkin
         data_type: timestamp
@@ -77,15 +110,28 @@ models:
       - name: city_id
         data_type: string
         description: "city_id of the hotel's city (anonymized)"
+        tests:
+          - unique:
+              severity: warn
+          - not_null:
+              severity: warn
 
       - name: device_class
         data_type: string
         description: "Device used to make the reservations eg desktop/mobile"
+        tests: 
+          - accepted_values:
+                values: ['desktop','mobile','tablet']
 
       - name: affiliate_id
         data_type: string
         description: "An anonymized ID of affiliate channels where the booker came from (e.g. direct, some third party referrals, paid search engine, etc.)"
-
+        tests:
+          - unique:
+              severity: warn
+          - not_null:
+              severity: 
+                
       - name: booker_country
         data_type: string
         description: "Country from which the reservation was made (anonymized)"
@@ -97,5 +143,9 @@ models:
       - name: utrip_id
         data_type: string
         description: "Unique identification of user's trip (a group of multi-destinations bookings within the same trip)."
-
+        tests:
+          - unique:
+              severity: warn
+          - not_null:
+              severity: warn
       
